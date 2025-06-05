@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - Medicine Tracker</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="navbar">
+            <div class="nav-brand">Medicine Tracker</div>
+            <div class="nav-links">
+                <a href="/dashboard">Dashboard</a>
+                <a href="/calendar" class="active">Calendar</a>
+                <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="calendar-header">
+                <h1>Medicine Calendar</h1>
+                <div class="date-selector">
+                    <button id="prevDate" class="btn btn-secondary">&lt;</button>
+                    <span id="currentDate"></span>
+                    <button id="nextDate" class="btn btn-secondary">&gt;</button>
+                </div>
+            </div>
+
+            <div class="calendar-content" id="calendarContent">
+                <!-- Medicine schedule will be loaded here -->
+            </div>
+        </main>
+    </div>
+    <script src="/js/calendar.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Medicine Tracker</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="navbar">
+            <div class="nav-brand">Medicine Tracker</div>
+            <div class="nav-links">
+                <a href="/dashboard" class="active">Dashboard</a>
+                <a href="/calendar">Calendar</a>
+                <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="dashboard-header">
+                <h1>My Medicines</h1>
+                <button id="addMedicineBtn" class="btn btn-primary">Add Medicine</button>
+            </div>
+
+            <div class="medicines-grid" id="medicinesGrid">
+                <!-- Medicines will be loaded here -->
+            </div>
+
+            <!-- Add Medicine Modal -->
+            <div id="medicineModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 id="modalTitle">Add Medicine</h2>
+                    <form id="medicineForm">
+                        <div class="form-group">
+                            <label for="medicineName">Medicine Name:</label>
+                            <input type="text" id="medicineName" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="medicineIcon">Icon:</label>
+                            <select id="medicineIcon" name="icon" required>
+                                <option value="tablet">💊 Tablet</option>
+                                <option value="capsule">💊 Capsule</option>
+                                <option value="syrup">🍼 Syrup</option>
+                                <option value="injection">💉 Injection</option>
+                                <option value="drops">💧 Drops</option>
+                                <option value="inhaler">🫁 Inhaler</option>
+                                <option value="cream">🧴 Cream</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="medicineDosage">Dosage:</label>
+                            <input type="text" id="medicineDosage" name="dosage" required placeholder="e.g., 500mg, 2 tablets">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="medicineFrequency">Times per day:</label>
+                            <input type="number" id="medicineFrequency" name="frequency" min="1" max="10" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="medicineDuration">Duration (days):</label>
+                            <input type="number" id="medicineDuration" name="duration" min="1" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="medicineStartDate">Start Date:</label>
+                            <input type="date" id="medicineStartDate" name="startDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="medicineInstructions">Instructions:</label>
+                            <textarea id="medicineInstructions" name="instructions" placeholder="e.g., Take with food"></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Medicine</button>
+                            <button type="button" class="btn btn-secondary" onclick="closeMedicineModal()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
